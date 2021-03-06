@@ -32,12 +32,10 @@ if (!$.isNode() && !YouthBody == true) {
     ReadArr.push(YouthBody)
 } else {
     if ($.isNode()) {
-        if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('&') > -1) {
-            YouthBodys = process.env.YOUTH_READ.split('&');
-            console.log(`您选择的是用"&"隔开\n`)
-        } else if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('\n') > -1) {
-            YouthBodys = process.env.YOUTH_READ.split('\n');
-            console.log(`您选择的是用换行隔开\n`)
+       
+        if (process.env.YOUTH_READ && process.env.YOUTH_READ.indexOf('\n') > -1) {
+        YouthBodys = process.env.YOUTH_READ.split('\n');
+        console.log(`您选择的是用换行隔开\n`)
         } else {
             YouthBodys = [process.env.YOUTH_READ]
         }
